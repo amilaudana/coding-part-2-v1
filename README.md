@@ -11,14 +11,21 @@ This LiveChat module developed for the programming test part 2. It is a custom M
 * Modular and scalable using Magento 2's UI components and dependency injection.
 
 ### Installation 
-1. Install via Composer
-   To install the module using Composer, run:
+1. Add the Repository to Composer
+   First, add the GitHub repository to your Composer configuration:
 ``` 
-composer require aligent/module-live-chat
-```
+composer config repositories.aligent_live_chat vcs https://github.com/amilaudana/coding-part-2-v1
+``` 
+2. Install the Module
+   Once the repository is added, install the module using:
+
+``` 
+composer require amilaudana/coding-part-2-v1:dev-main
+``` 
 
 2. Enable the Module
    After installation, enable the module and run the Magento setup commands:
+
 ``` 
 php bin/magento module:enable Aligent_LiveChat
 php bin/magento setup:upgrade
