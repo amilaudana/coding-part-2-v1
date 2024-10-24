@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <preference for="Aligent\LiveChat\Api\LiveChatLogRepositoryInterface" type="Aligent\LiveChat\Model\LiveChatLogRepository"/>
+
+    <type name="Aligent\LiveChat\Api\LiveChatLogRepositoryInterface">
+        <arguments>
+            <argument name="logRepository" xsi:type="object">Aligent\LiveChat\Model\LiveChatLogRepository</argument>
+        </arguments>
+    </type>
+
+    <type name="Aligent\LiveChat\Model\LiveChat\DataProvider">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">Aligent\LiveChat\Model\ResourceModel\LiveChatLog\CollectionFactory</argument>
+        </arguments>
+    </type>
+
+    <virtualType name="Aligent\LiveChat\Model\ResourceModel\LiveChatLog\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">aligent_livechat_log</argument>
+            <argument name="resourceModel" xsi:type="string">Aligent\LiveChat\Model\ResourceModel\LiveChatLog\Collection</argument>
+        </arguments>
+    </virtualType>
+
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="ui_livechat_logs_listing_data_source" xsi:type="string">Aligent\LiveChat\Model\ResourceModel\LiveChatLog\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <type name="Aligent\LiveChat\Model\LiveChatLogRepository">
+        <arguments>
+            <argument name="logFactory" xsi:type="object">Aligent\LiveChat\Model\LiveChatLogFactory</argument>
+        </arguments>
+    </type>
+
+    <type name="Aligent\LiveChat\Model\LiveChatLogRepository">
+        <arguments>
+            <argument name="collectionFactory" xsi:type="object">Aligent\LiveChat\Model\ResourceModel\LiveChatLog\Grid\CollectionFactory</argument>
+        </arguments>
+    </type>
+
+</config>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="aligent_livechat_log" resource="default" engine="innodb" comment="Aligent Livechat Log">
+        <column xsi:type="int" name="livechat_log_id" nullable="false" unsigned="true" padding="10" identity="true" comment="Livechat Log Id"/>
+        <column xsi:type="varchar" name="livechat_license_number" nullable="false" length="255" comment="Livechat License Number"/>
+        <column xsi:type="int" name="livechat_groups" nullable="false" unsigned="true" comment="Livechat Groups"/>
+        <column xsi:type="mediumtext" name="livechat_params" comment="Livechat Params"/>
+        <column xsi:type="varchar" name="action" nullable="false" length="255" comment="Router and Action"/>
+        <column xsi:type="timestamp" name="updated_at" nullable="false" on_update="true" default="CURRENT_TIMESTAMP" comment="Updated At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="livechat_log_id"/>
+        </constraint>
+    </table>
+</schema>
