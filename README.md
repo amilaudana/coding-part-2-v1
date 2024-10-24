@@ -10,6 +10,11 @@ This LiveChat module developed for the programming test part 2. It is a custom M
 * Grid-based viewing of log entries, with date filtering and sorting.
 * Modular and scalable using Magento 2's UI components and dependency injection.
 
+###Requirements
+Magento Version: Magento 2.4.x
+
+PHP Version: PHP 8.x
+
 ### Installation 
 1. Add the Repository to Composer. First, add the GitHub repository to your Composer configuration:
 
